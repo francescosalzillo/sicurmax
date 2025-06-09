@@ -11,35 +11,57 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Loader Logo -->
 <div id="loader-logo">
-  <span class="logo">SicurMax</span>
+  <img src="./img/logo.png" alt="SicurMax" class="logo-img">
 </div>
   <header class="site-header">
-    <div class="container nav-container">
-      <h1 class="logo">SicurMax</h1>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#storia">Storia Aziendale</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#fiere">Fiere & Eventi</a>
-        <a href="#sponsorizzazioni">Sponsorizzazioni</a>
-        <a href="#contatti">Contatti</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav-container">
+    <img src="./img/logo.png" alt="SicurMax" class="logo-img">
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav" id="main-nav">
+    <button class="close-menu" id="close-menu" aria-label="Chiudi menu">&times;</button>
+      <a href="#home">HOME</a>      
+      <a href="#storia">LA NOSTRA STORIA</a>
+      <a href="#servizi">SERVIZI</a>   
+      <a href="#contatti">CONTATTI</a>
+    </nav>
+</header>
+<div class="menu-overlay" id="menu-overlay"></div>
 
   <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h2>Impianti Antincendio & Sicurezza</h2>
-      <p>Soluzioni professionali dal 20XX per la tua tranquillità.</p>
-      <a href="#contatti" class="btn">Richiedi un preventivo</a>
+  <div class="slider">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <img src="img/slider1.jpg" alt="Impianti di sicurezza">
+      <div class="slide-content">
+        <h2>Accendiamo il futuro… un filo alla volta</h2>
+        <p>Installazioni rapide, interventi certi: il tuo impianto non salta mai.</p>
+        <a href="#contatti" class="btn">Richiedi un preventivo</a>
+      </div>
     </div>
-  </section>
-
+    
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="img/slider2.webp" alt="Sistemi antifurto">
+      <div class="slide-content">
+        <h2>La corrente perfetta? Ci pensa Max.</h2>
+        <p>Soluzioni elettriche professionali per ogni esigenza—zero blackout garantiti.</p>
+        <a href="#servizi" class="btn">Scopri i servizi</a>
+      </div>
+    </div>
+    
+    <!-- Navigation -->
+    <button class="slider-nav prev" aria-label="Slide precedente">&#10094;</button>
+    <button class="slider-nav next" aria-label="Slide successiva">&#10095;</button>
+    <div class="slider-dots"></div>
+  </div>
+</section>
   <section id="storia" class="about container">
-    <h2>Storia Aziendale</h2>
+    <h2>LA NOSTRA STORIA</h2>
     <p>Con oltre un decennio di esperienza nel settore elettrico ed elettronico, SicurMax nasce nel 2008 dalla visione di Massimo Ghiotto: unire sicurezza e innovazione per proteggere ciò che conta davvero. Grazie a partnership con i leader di mercato, offriamo soluzioni hi-tech e affidabili.</p>
     <P>Il nostro team di esperti ti accompagna in ogni fase, dalla progettazione alla manutenzione post-vendita, con assistenza remota e interventi rapidi su tutto il territorio nazionale</P>
 </section>
@@ -61,35 +83,35 @@
         <h3>Antincendio</h3>
         <p>Sistemi antincendio certificati per aziende e privati.</p>
       </a>
-     <a class="service-item" href="servizio-videosorveglianza.html">
-  <div class="service-icon-bg">
-    <i class="fa-solid fa-video service-icon"></i>
-  </div>
-  <h3>Videosorveglianza</h3>
-  <p>Telecamere HD, registrazione cloud e accesso live da smartphone.</p>
-</a>
-<a class="service-item" href="servizio-fotovoltaico.html">
-  <div class="service-icon-bg">
-    <i class="fa-solid fa-solar-panel service-icon"></i>
-  </div>
-  <h3>Fotovoltaico</h3>
-  <p>Sistemi solari per risparmio energetico e incentivi statali.</p>
-</a>
+      <a class="service-item" href="">
+        <div class="service-icon-bg">
+          <i class="fa-solid fa-camera service-icon"></i>
+        </div>
+        <h3>Videosorveglianza</h3>
+        <p>Telecamere HD, registrazione cloud e accesso live da smartphone.</p>
+      </a>
+      <a class="service-item" href="">
+        <div class="service-icon-bg">
+          <i class="fa-solid fa-solar-panel service-icon"></i>
+        </div>
+        <h3>Fotovoltaico</h3>
+        <p>Sistemi solari per risparmio energetico e incentivi statali.</p>
+      </a>
     </div>
   </div>
 </section>
-
+<!--
   <section id="fiere" class="events container">
     <h2>Fiere & Eventi</h2>
     <p>Scopri dove ci troverai prossimamente per demo e workshop.</p>
-    <!-- Lista eventi moderna -->
-  </section>
+ 
+  </section> 
 
   <section id="sponsorizzazioni" class="sponsorship container">
     <h2>Sponsorizzazioni</h2>
     <p>Partner ufficiali e iniziative locali sostenute da SicurMax.</p>
   </section>
-
+-->
   <section id="contatti" class="contact container">
     <h2>Contatti</h2>
     <p>Email: <a href="mailto:info@sicurmax.it">info@sicurmax.it</a></p>
@@ -114,5 +136,103 @@ window.addEventListener('load', function() {
   }, 900); // tempo visibile (ms)
 });
 </script>
+<script type="text/javascript">
+// Loader logo (se già presente puoi omettere questa parte)
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const loader = document.getElementById('loader-logo');
+    if(loader) loader.classList.add('hide');
+  }, 900);
+});
+
+// Hamburger menu mobile
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+const overlay = document.getElementById('menu-overlay');
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  nav.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+hamburger.addEventListener('click', function() {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('open');
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', closeMenu);
+
+// Chiudi menu al click su un link (opzionale)
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+const closeMenuBtn = document.getElementById('close-menu');
+if (closeMenuBtn) {
+  closeMenuBtn.addEventListener('click', closeMenu);
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.querySelector('.slider-dots');
+  const prevBtn = document.querySelector('.slider-nav.prev');
+  const nextBtn = document.querySelector('.slider-nav.next');
+  let currentSlide = 0;
+  let autoSlideInterval;
+
+  // Crea i punti di navigazione
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Vai alla slide ${index + 1}`);
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateDots() {
+    document.querySelectorAll('.slider-dots button').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    updateDots();
+    resetAutoSlide();
+  }
+
+  function nextSlide() {
+    const newIndex = (currentSlide + 1) % slides.length;
+    goToSlide(newIndex);
+  }
+
+  function prevSlide() {
+    const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(newIndex);
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Inizializzazione
+  updateDots();
+  startAutoSlide();
+});
+</script>
+
+
 </body>
 </html>
