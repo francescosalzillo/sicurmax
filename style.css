@@ -245,7 +245,7 @@ a { text-decoration:none; }
 .contact-form { display:grid; gap:1rem; max-width:600px; margin:1.5rem auto 0; }
 .contact-form input, .contact-form textarea { padding:0.75rem; border:1px solid #ccc; border-radius:4px; }
 
-.site-footer { background:#faa300; color:#fff; text-align:center; padding:1rem 0; }
+
 /* Servizi accattivanti */
 .services {
   background: #fff3e6;
@@ -431,14 +431,6 @@ a { text-decoration:none; }
   }
 }
 
-/* Footer */
-@media (max-width: 700px) {
-  .site-footer .container {
-    width: 98%;
-    font-size: 0.95rem;
-    padding: 0 0.2rem;
-  }
-}
 
 /* Stili dedicati alla pagina Antifurto */
 .antifurto-approach {
