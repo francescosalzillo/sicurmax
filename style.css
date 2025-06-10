@@ -10,22 +10,24 @@ body {
   letter-spacing: 1px;
 }
 .logo-img {
-  height: 150px;
-  width: auto;
+  width: 100vw; /* 10% della larghezza dello schermo */
+  height: auto; /* Mantiene le proporzioni */
+  max-width: 300px; /* Limite massimo per non esagerare */
+  min-width: 100px; 
   transition: height 0.3s ease;
 }
 
 /* Responsive: logo più grande su schermi piccoli */
 @media (max-width: 900px) {
   .logo-img {
-    height:120px; /* Aumenta su tablet */
+    width: 40vw; /* Aumenta su tablet */
     transition: height 0.3s ease;
   }
 }
 
 @media (max-width: 700px) {
   .logo-img {
-    height: 120px; /* Aumenta ulteriormente su mobile */
+    width: 40vw; /* Aumenta ulteriormente su mobile */
     transition: height 0.3s ease;
   }
 }
